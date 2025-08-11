@@ -1,0 +1,210 @@
+/* Reset dasar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f9fa;
+  color: #222;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #0ca789; /* toska */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header button#btnBack {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+header h1 {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+aside {
+  width: 320px;
+  background: #ffffff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+nav ul#tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: #0ca789;
+}
+
+nav ul#tabs li.tab.active {
+  border-bottom: 2px solid #0ca789;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.category {
+  margin-bottom: 1rem;
+}
+
+.category-header {
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-header span.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.category-header.expanded span.arrow {
+  transform: rotate(90deg);
+}
+
+.controls {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+
+.controls .control-item {
+  margin-bottom: 0.8rem;
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.controls input[type="range"] {
+  width: 100%;
+}
+
+#canvas-area {
+  flex: 1;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+}
+
+#imageCanvas {
+  max-width: 100%;
+  max-height: 80vh;
+  background: #333;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+#controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#controls input[type="file"] {
+  cursor: pointer;
+}
+
+#controls button {
+  background-color: #0ca789;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#controls button:hover {
+  background-color: #088467;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  aside {
+    width: 100%;
+    max-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+    display: flex;
+    padding: 0.5rem 1rem;
+  }
+
+  nav ul#tabs {
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .tab-content {
+    display: none !important;
+  }
+
+  .tab-content.active {
+    display: block !important;
+  }
+
+  #canvas-area {
+    padding: 0.5rem;
+  }
+
+  #imageCanvas {
+    max-height: 50vh;
+  }
+
+  #controls {
+    flex-wrap: wrap;
+  }
+    }
